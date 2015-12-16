@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")/.."
+tmpdir="$(pwd)/dist/tmp"
+pkgdir="$(pwd)/dist/pkg"
+cachedir="$(pwd)/dist/cache"
+mkdir -p "$tmpdir" "$pkgdir" "$cachedir"
+fpm-cook package \
+    --tmp-root "$tmpdir" \
+    --pkg-dir "$pkgdir" \
+    --cache-dir "$cachedir" \
+    packages/**/recipe.rb
