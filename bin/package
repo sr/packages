@@ -9,4 +9,4 @@ fpm-cook package \
     --tmp-root "$tmpdir" \
     --pkg-dir "$pkgdir" \
     --cache-dir "$cachedir" \
-    packages/**/recipe.rb
+    recipes/**/recipe.rb
