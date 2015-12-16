@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+cd "$2"
+test -d docker-gc ||
+git clone https://github.com/spotify/docker-gc.git docker-gc
+cd docker-gc
+git fetch origin
+git reset --hard e194bc0fec47e55e03d94fb2e5b4260748f2cfae
+debuild --no-lintian -us -uc -b
+mv ../docker-gc_0.1.0_all.deb "../../$1"
