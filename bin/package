@@ -1,12 +1,30 @@
 #!/bin/sh
+#/ Usage: package all
+#/        package <package>
 set -eu
 cd "$(dirname "$0")/.."
+
+pkg="${1:-"all"}"
 tmpdir="$(pwd)/dist/tmp"
 pkgdir="$(pwd)/dist/pkg"
 cachedir="$(pwd)/dist/cache"
+
 mkdir -p "$tmpdir" "$pkgdir" "$cachedir"
-fpm-cook package \
-    --tmp-root "$tmpdir" \
-    --pkg-dir "$pkgdir" \
-    --cache-dir "$cachedir" \
-    recipes/**/recipe.rb
+
+package() {
+    pkg="$1"
+    fpm-cook package \
+        --tmp-root "$tmpdir" \
+        --pkg-dir "$pkgdir" \
+        --cache-dir "$cachedir" \
+        "$pkg"
+}
+
+if [ "$pkg" = "all" ]
+then
+    for recipe in $(find . -name recipe.rb)
+    do package "$recipe"
+    done
+else
+    package "recipes/$pkg/recipe.rb"
+fi
