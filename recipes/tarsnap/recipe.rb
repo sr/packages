@@ -6,7 +6,7 @@ class Tarsnap < FPM::Cookery::Recipe
   version "1.0.36.1"
   license "Tarsnap License"
   section "tools"
-  maintainer "David Sastre Medina <d.sastre.medina@gmail.com>"
+  maintainer "Simon Rozet <me@simonrozet.com>"
   description "Tarsnap is a secure online backup service
 for BSD, Linux, OS X, Minix, OpenIndiana, Cygwin and probably many
 other UNIX-like operating systems. The Tarsnap client code provides
