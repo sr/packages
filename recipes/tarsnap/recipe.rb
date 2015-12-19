@@ -14,12 +14,10 @@ a flexible and powerful command-line interface which can be used
 directly or via shell scripts."
 
   build_depends \
-    "gcc",
-    "make",
-    "glibc-devel",
-    "openssl-devel",
-    "zlib-devel",
-    "e2fsprogs-devel"
+    "build-essential",
+    "e2fslibs-dev",
+    "libssl-dev",
+    "zlib1g-dev"
 
   def build
     configure \
