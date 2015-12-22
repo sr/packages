@@ -4,6 +4,7 @@ class Tarsnap < FPM::Cookery::Recipe
   sha256 "a2909e01e2f983179d63ef2094c42102c92c716032864e66ef25ae341ea28690"
   name "tarsnap"
   version "1.0.36.1"
+  revision "20151219"
   license "Tarsnap License"
   section "tools"
   maintainer "Simon Rozet <me@simonrozet.com>"
