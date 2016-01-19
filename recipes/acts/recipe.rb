@@ -1,7 +1,7 @@
 class ACTS < FPM::Cookery::Recipe
   name "acts"
   version "1.2"
-  revision "20151216"
+  revision "20160119"
   homepage "https://github.com/alexjurkiewicz/acts"
   maintainer "Simon Rozet <me@simonrozet.com>"
   source "https://github.com/alexjurkiewicz/acts",
@@ -19,7 +19,7 @@ class ACTS < FPM::Cookery::Recipe
 
   def install
     bin.install("acts")
-    etc("acts.conf").install("acts.conf.sample")
+    etc.install("acts.conf.sample", "acts.conf")
     doc("acts").install("README.md")
     doc("acts").install("contrib")
   end
